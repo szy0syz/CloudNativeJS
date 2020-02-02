@@ -83,3 +83,31 @@ GET /stylesheets/style.css 304 2.358 ms - -
 - `docker run -i -p 3000:3000 -t nodeserver-run`
 - `docker tag nodeserver-run nodeserver:1.0.0`
 - 接下来登录 DockerHub 或者 阿里云 上传镜像
+
+```bash
+docker login --username=185505508@qq.com registry.cn-hangzhou.aliyuncs.com
+docker tag 9022c9fcffba registry.cn-hangzhou.aliyuncs.com/szy0syz/nodeserver:1.0.0
+docker push registry.cn-hangzhou.aliyuncs.com/szy0syz/nodeserver:1.0.0
+```
+
+## Kubernetes & Helm
+
+![k8s](http://cdn.jerryshi.com/WX20200202-170744.png?imageView2/3/w/800)
+
+> MaxOS 安装k8s相对简单
+
+![ks8install](http://cdn.jerryshi.com/20200202171452.png)
+
+### 安装 Helm
+
+> brew install kubernetes-helm
+
+- `helm repo`
+- `helm repo list`
+- <https://hub.helm.sh/>
+- <https://github.com/CloudNativeJS/helm>
+- 拷贝repo中chart文件夹到项目根目录
+
+### 启动
+
+- `helm install nodeserver chart/nodeserver`

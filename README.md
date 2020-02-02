@@ -75,3 +75,11 @@ GET /stylesheets/style.css 304 2.358 ms - -
 ![i101](http://cdn.jerryshi.com/1580633081211.jpg)
 ![2](http://cdn.jerryshi.com/1580633314083.jpg)
 ![3](http://cdn.jerryshi.com/1580633317629.jpg)
+
+### 构建生成环境的镜像
+
+- `wget https://raw.githubusercontent.com/CloudNativeJS/docker/master/Dockerfile-run`
+- `docker build -t nodeserver-run -f Dockerfile-run .`
+- `docker run -i -p 3000:3000 -t nodeserver-run`
+- `docker tag nodeserver-run nodeserver:1.0.0`
+- 接下来登录 DockerHub 或者 阿里云 上传镜像

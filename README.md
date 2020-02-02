@@ -47,7 +47,7 @@ PATH=node_modules/.bin:$PATH nodemon ./bin/www
 
 ### 创建tools镜像
 
-> 啥作用呢？热更新镜像，根据代码试试重构镜像。
+> 啥作用呢？热更新，根据代码实时重构镜像。
 
 - `docker build -t nodeserver-tools -f Dockerfile-tools .`
 - `docker run -i -v "$PWD"/package.json:/tmp/package.json -v "$PWD"/node_modules_linux:/tmp/node_modules -w /tmp -t node:10 npm install`
